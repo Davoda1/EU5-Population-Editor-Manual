@@ -12,9 +12,9 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'dist'
 APP = 'https://github.com/Davoda1/EU5-Population-Editor'
 REPO = 'https://github.com/Davoda1/EU5-Population-Editor-Manual'
-VERSION = '1.0.0'
-ASSET_VERSION = '1.0.0'
-PAGES = [('Getting started', 'overview', 'Introduction', 'EU5 Population Editor manual'), ('Getting started', 'installation', 'Installation', 'Install the editor'), ('Getting started', 'first-project', 'Your first project', 'Create your first project'), ('Editing population', 'navigation', 'Browse the world', 'Countries, locations and maps'), ('Editing population', 'editing', 'Draft and Apply', 'Edit population values'), ('Editing population', 'ratios', 'Ratios and totals', 'Rebalance demographics'), ('Editing population', 'projects', 'Save and reopen', 'Save and reopen projects'), ('Editing population', 'export', 'Export a mod', 'Export a population mod'), ('Updating game data', 'migration', 'Upgrade a project', 'Migrate after a game update'), ('Updating game data', 'import', 'Import an existing mod', 'Import existing population edits'), ('Reference', 'validation', 'Validation and reports', 'Check your changes'), ('Reference', 'settings', 'Settings and shortcuts', 'Settings and keyboard shortcuts'), ('Reference', 'troubleshooting', 'Troubleshooting', 'Troubleshooting'), ('Reference', 'privacy', 'Privacy and licensing', 'Privacy, data and licensing'), ('Reference', 'release-notes', 'Release notes', 'Version 1.0.0')]
+VERSION = '1.0.1'
+ASSET_VERSION = '1.0.1'
+PAGES = [('Getting started', 'overview', 'Introduction', 'EU5 Population Editor manual'), ('Getting started', 'installation', 'Installation', 'Install the editor'), ('Getting started', 'first-project', 'Your first project', 'Create your first project'), ('Editing population', 'navigation', 'Browse the world', 'Countries, locations and maps'), ('Editing population', 'editing', 'Draft and Apply', 'Edit population values'), ('Editing population', 'ratios', 'Ratios and totals', 'Rebalance demographics'), ('Editing population', 'projects', 'Save and reopen', 'Save and reopen projects'), ('Editing population', 'export', 'Export a mod', 'Export a population mod'), ('Updating game data', 'migration', 'Upgrade a project', 'Migrate after a game update'), ('Updating game data', 'import', 'Import an existing mod', 'Import existing population edits'), ('Reference', 'validation', 'Validation and reports', 'Check your changes'), ('Reference', 'settings', 'Settings and shortcuts', 'Settings and keyboard shortcuts'), ('Reference', 'troubleshooting', 'Troubleshooting', 'Troubleshooting'), ('Reference', 'privacy', 'Privacy and licensing', 'Privacy, data and licensing'), ('Reference', 'release-notes', 'Release notes', 'Version 1.0.1')]
 def filename(slug):
     return 'index.html' if slug == 'overview' else slug + '.html'
 
@@ -45,7 +45,9 @@ def size_screenshots(article):
         width,height=struct.unpack('>II',header[16:24])
         ending='/>' if tag.endswith('/>') else '>'
         return tag[:-len(ending)].rstrip()+f' width="{width}" height="{height}"'+ending
-    return re.sub(r'<img\b[^>]*>',size_image,article)
+    article=re.sub(r'<img\b[^>]*>',size_image,article)
+    return re.sub(r'href="(assets/[^"<>]+\.png)"',
+                  lambda match: f'href="{match.group(1)}?v={ASSET_VERSION}"', article)
 
 def build():
     if OUT.exists(): shutil.rmtree(OUT)

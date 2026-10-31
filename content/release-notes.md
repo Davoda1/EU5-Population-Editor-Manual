@@ -1,4 +1,20 @@
-Version 1.0.0 is the first public-release line of EU5 Population Editor. It supports Windows and GNU/Linux x86-64.
+Version 1.0.1 adds a dedicated Settings dialog and improves startup and window behavior. It supports Windows and GNU/Linux x86-64, and keeps the existing project format and population-editing workflow.
+
+## New in 1.0.1
+
+- Keep the welcome screen within the available window space without scrolling.
+- Open Settings using the gear beside About, with Appearance, Game and Window sections.
+- Preview System, Light or Dark appearance before saving; Cancel restores the saved theme.
+- Type, paste or browse for an installation directory and save its manual EU5 version.
+- Load the saved installation at startup, or turn automatic loading off.
+- Restore normal window size, position and maximized state, with a reset option and recovery for changed display arrangements.
+- Remember project and export folders separately, with an option to disable folder history.
+- Show the loaded installation's saved game version in Export Mod and change it through Game settings.
+- Refresh the manual's screenshots and add illustrated Settings and welcome-screen guidance.
+
+## Features retained from 1.0.0
+
+The first public release introduced the editing, migration and export capabilities below. They remain available in 1.0.1.
 
 ## Editing and review
 

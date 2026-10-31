@@ -1,8 +1,48 @@
-The editor follows your operating-system theme by default and stores preferences outside the application directory. Game-version preferences are remembered per installation.
+Open **Settings** using the gear immediately to the right of **About**. Its three sections bring appearance, game data and window preferences together. Settings are stored locally, outside the application directory.
 
-## Theme
+## Appearance
 
-Use **Auto theme**, **Light** or **Dark** in the application toolbar. Auto follows the operating-system setting. The manual's theme button is separate and cycles through system, light and dark.
+Choose **System**, **Light** or **Dark**. System follows your operating system's appearance and is the default. The preview changes immediately; choose **Save settings** to keep it, or **Cancel** to return to the saved appearance.
+
+<figure class="theme-screenshot">
+<img class="screenshot-light" src="assets/settings-appearance-light.png" alt="Appearance settings with System, Light and Dark theme choices." loading="lazy">
+<img class="screenshot-dark" src="assets/settings-appearance-dark.png" alt="Appearance settings with System, Light and Dark theme choices." loading="lazy">
+<figcaption>The Appearance section previews the selected theme before saving. <a class="fullsize-light" href="assets/settings-appearance-light.png" target="_blank" rel="noopener">Open full-size screenshot ↗</a><a class="fullsize-dark" href="assets/settings-appearance-dark.png" target="_blank" rel="noopener">Open full-size screenshot ↗</a></figcaption>
+</figure>
+
+The manual's theme button is independent of the application setting and cycles through system, light and dark.
+
+## Game installation and version
+
+In **Game**, type or paste the **Installation directory**, or use **Browse…** to choose it with the operating system's folder picker. Select the Europa Universalis V installation root or its `game` subdirectory. Both refer to the same installation preference.
+
+Enter the **Manual EU5 version** shown by the game, then choose **Save settings**. The initial value is `1.4.5`. Versions are remembered separately for each installation; a leading `v` is accepted and normalized when saved. The editor does not detect the version automatically.
+
+<figure class="theme-screenshot">
+<img class="screenshot-light" src="assets/settings-game-light.png" alt="Game settings with an installation directory, manual EU5 version and startup and folder preferences." loading="lazy">
+<img class="screenshot-dark" src="assets/settings-game-dark.png" alt="Game settings with an installation directory, manual EU5 version and startup and folder preferences." loading="lazy">
+<figcaption>Keep an installation and its manual version together. <a class="fullsize-light" href="assets/settings-game-light.png" target="_blank" rel="noopener">Open full-size screenshot ↗</a><a class="fullsize-dark" href="assets/settings-game-dark.png" target="_blank" rel="noopener">Open full-size screenshot ↗</a></figcaption>
+</figure>
+
+Use **Load saved installation** to load the saved data. Replacing an active session still asks you to resolve unsaved work. Saving settings alone does not replace the current project.
+
+**Load saved game data on startup** is enabled by default. Disable it to open the welcome screen without loading an installation. The welcome screen offers **Load saved game data** when a directory has been saved. Startup loading prepares game data; it does not reopen a project file automatically. If the saved installation cannot be loaded, the editor reports the problem and leaves the welcome screen available so you can correct the directory in Settings.
+
+**Remember project and export folders** is enabled by default. The editor remembers the last project folder and export destination separately, so choosing an export destination does not change the next project dialog's starting folder. Turn the option off to stop remembering these locations.
+
+Export uses the saved manual version for the loaded installation. Compatibility with **EU5 v1.4.5** is confirmed; changing a version label does not confirm compatibility with another release. If the actual game data changes, use [project migration](migration.html) rather than changing the version to bypass a fingerprint mismatch.
+
+## Window placement
+
+In **Window**, **Remember window size and position** is enabled by default. It restores the normal window size and position, as well as whether the editor was maximized. Turn it off and save to clear the recorded placement and use the default centered window at the next start.
+
+<figure class="theme-screenshot">
+<img class="screenshot-light" src="assets/settings-window-light.png" alt="Window settings with remembered size and position enabled and a Reset window layout button." loading="lazy">
+<img class="screenshot-dark" src="assets/settings-window-dark.png" alt="Window settings with remembered size and position enabled and a Reset window layout button." loading="lazy">
+<figcaption>Window restoration can be disabled or reset independently of game data. <a class="fullsize-light" href="assets/settings-window-light.png" target="_blank" rel="noopener">Open full-size screenshot ↗</a><a class="fullsize-dark" href="assets/settings-window-dark.png" target="_blank" rel="noopener">Open full-size screenshot ↗</a></figcaption>
+</figure>
+
+Choose **Reset window layout**, then **Save settings**, to return to the default size and center the editor. If the display arrangement has changed, saved placement is adjusted to keep the window on an available display. The welcome screen fits the available space without scrolling; working panels and Settings can scroll within their own areas when needed.
 
 ## User-data locations
 
@@ -11,15 +51,9 @@ Use **Auto theme**, **Light** or **Dark** in the application toolbar. Auto follo
 | Windows | `%AppData%\eu5-population-editor` |
 | GNU/Linux | `~/.config/eu5-population-editor` |
 
-The application stores preferences, remembered game versions and its map cache here. On Linux, a custom XDG configuration directory can change the base location. Saved projects use the locations you choose in Save As.
+The application stores preferences, remembered game versions and its map cache here. On Linux, a custom XDG configuration directory can change the base location.
 
 Your `.eu5popproj` files and exported mods are stored in the locations you explicitly choose. Back them up separately. Close the application before manually moving or removing its settings/cache directory.
-
-## Supported game version
-
-Open **Export Mod** to change **Supported EU5 version** and choose **Save game version**. The first default is `1.4.5`. The value is saved for that installation even if you do not export.
-
-Loading the installation root or its `game` subdirectory refers to the same saved installation setting. Update the field when appropriate, but use migration whenever the actual source data has changed.
 
 ## Application shortcuts
 

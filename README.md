@@ -6,7 +6,7 @@ The guide to [EU5 Population Editor](https://github.com/Davoda1/EU5-Population-E
 
 **[Read the manual](https://davoda1.github.io/EU5-Population-Editor-Manual/)** · **[Build the manual](#build-the-manual)** · **[Get the editor](https://github.com/Davoda1/EU5-Population-Editor/releases)** · **[Report a documentation issue](https://github.com/Davoda1/EU5-Population-Editor-Manual/issues)**
 
-This manual covers **application 1.0.0**, with confirmed compatibility with **EU5 v1.4.5**. The initial supported-game-version setting is **1.4.5** and can be changed for each installation. Later game versions require separate compatibility verification.
+This manual covers **application 1.0.1**, with confirmed compatibility with **EU5 v1.4.5**. The initial supported-game-version setting is **1.4.5** and can be changed for each installation. Later game versions require separate compatibility verification.
 
 ## Topics covered
 

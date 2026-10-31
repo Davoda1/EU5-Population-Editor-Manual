@@ -12,6 +12,18 @@ Select the actual installation or `game` directory, not a saved project or expor
 
 The editor follows active setup bookmarks and safe nested includes. Multiple active start dates select the earliest with a warning; ambiguous equal-date selections and conflicting included sources are rejected. Unusual or changed data layouts may require an editor update.
 
+## The saved installation does not load at startup
+
+Open **Settings → Game** and check the installation directory. A moved installation, disconnected drive or missing files can prevent startup loading. Correct the path, save it and choose **Load saved installation**. Leave **Load saved game data on startup** enabled to try that installation automatically next time, or disable it to start at the welcome screen.
+
+Saving a different installation in Settings does not replace the currently loaded data. Load the saved installation when you are ready to switch; the normal unsaved-work confirmation still applies.
+
+## Window placement or appearance is unexpected
+
+Use **Settings → Window → Reset window layout**, then **Save settings**, to restore the default centered layout. Turn off **Remember window size and position** if each launch should use that default. Restored windows are fitted to an available display when the monitor arrangement changes.
+
+Use **Settings → Appearance** for **System**, **Light** or **Dark**. A theme preview is kept only after **Save settings**; **Cancel** restores the saved theme. The manual's own theme button does not change the application.
+
 ## Country names or the map are missing
 
 Population editing can continue when optional English localization or map data is unavailable. Identifiers remain usable. Load matching map files and choose **Index map** if the control is available. Ambiguous shared map colors are reported rather than guessed.
@@ -26,7 +38,7 @@ Choose **Review draft** after the most recent input change. Resolve any invalid 
 
 ## Saved changes appear to be missing
 
-Save and export include only confirmed Working values. Pending drafts are excluded. Verify that you applied the proposal and saved the intended project file. There is no autosave in 1.0.0.
+Save and export include only confirmed Working values. Pending drafts are excluded. Verify that you applied the proposal and saved the intended project file. There is no autosave in 1.0.1.
 
 ## Source mismatch after a game update
 
