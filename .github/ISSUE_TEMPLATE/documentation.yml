@@ -1,0 +1,26 @@
+name: Documentation issue
+description: Report incorrect instructions, a broken link or a missing explanation.
+title: "[Docs]: "
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page or chapter
+      description: Include the page title or URL.
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What needs correcting?
+      description: Describe the issue and the expected information. Do not include private paths or proprietary game files.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Application version and operating system
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested correction

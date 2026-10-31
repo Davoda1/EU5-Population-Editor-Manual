@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Application bug or feature request
+    url: https://github.com/Davoda1/EU5-Population-Editor/issues
+    about: Report application behavior in the software repository.
