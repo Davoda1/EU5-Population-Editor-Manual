@@ -34,7 +34,7 @@ The available resolutions include keeping new vanilla, applying the old modifica
 
 For a restricted location, **Keep new vanilla** is the only resolution. Old or scaled population edits cannot be applied to water, corridors or impassable land. The migration report retains the old edits for review; they are not silently discarded while planning.
 
-Directly applying old ratios onto new vanilla and opening a conflict in a temporary normal editing workspace are not available in 1.0.1. You can keep new vanilla, commit the reviewed plan and then edit the location normally if it remains ordinary land eligible for population editing.
+Directly applying old ratios onto new vanilla and opening a conflict in a temporary normal editing workspace are not available in 1.0.2. You can keep new vanilla, commit the reviewed plan and then edit the location normally if it remains ordinary land eligible for population editing.
 
 ## Review world changes
 

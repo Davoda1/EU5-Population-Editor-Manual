@@ -19,7 +19,7 @@ Read the included `RUNNING.txt` for distribution-specific library and sandbox re
 Download the `amd64.deb` package and install it using your package manager, for example from the directory containing the downloaded file:
 
 ```sh
-sudo apt install ./eu5-population-editor_1.0.1_amd64.deb
+sudo apt install ./eu5-population-editor_1.0.2_amd64.deb
 ```
 
 Start the application from the desktop application menu or run `eu5-population-editor`. The package installs a regular native entry executable in `/usr/bin` and its runtime in `/usr/lib/eu5-population-editor`.

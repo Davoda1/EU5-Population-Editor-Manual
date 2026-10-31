@@ -28,6 +28,6 @@ The editor uses a themed confirmation dialog when replacing unsaved work, exitin
 
 ## File compatibility
 
-The public application's version number and the project format version are separate. Version 1.0.1 uses native project format 1. A project remains subject to schema, checksum and game-source checks regardless of the application version recorded in it.
+The public application's version number and the project format version are separate. Version 1.0.2 uses native project format 1. A project remains subject to schema, checksum and game-source checks regardless of the application version recorded in it.
 
 See [Import existing population edits](import.html) for supported older JSON projects and mod population files. See [Migrate after a game update](migration.html) when the game data has changed.

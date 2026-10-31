@@ -4,9 +4,9 @@ EU5 Population Editor is an offline desktop tool for inspecting and editing Euro
 
 
 <figure class="theme-screenshot">
-<img class="screenshot-light" src="assets/workspace-light.png" alt="EU5 Population Editor 1.0.1 showing England and the population groups for London." loading="lazy">
-<img class="screenshot-dark" src="assets/workspace-dark.png" alt="EU5 Population Editor 1.0.1 showing England and the population groups for London." loading="lazy">
-<figcaption>The 1.0.1 editor interface with London selected from England. The image follows the manual theme. <a class="fullsize-light" href="assets/workspace-light.png" target="_blank" rel="noopener">Open full-size screenshot ↗</a><a class="fullsize-dark" href="assets/workspace-dark.png" target="_blank" rel="noopener">Open full-size screenshot ↗</a></figcaption>
+<img class="screenshot-light" src="assets/workspace-light.png" alt="EU5 Population Editor 1.0.2 showing England and the population groups for London." loading="lazy">
+<img class="screenshot-dark" src="assets/workspace-dark.png" alt="EU5 Population Editor 1.0.2 showing England and the population groups for London." loading="lazy">
+<figcaption>The 1.0.2 editor interface with London selected from England. The image follows the manual theme. <a class="fullsize-light" href="assets/workspace-light.png" target="_blank" rel="noopener">Open full-size screenshot ↗</a><a class="fullsize-dark" href="assets/workspace-dark.png" target="_blank" rel="noopener">Open full-size screenshot ↗</a></figcaption>
 </figure>
 
 ## Start here
@@ -33,4 +33,4 @@ The values displayed are the game's source size units. They are not automaticall
 
 Compatibility with **EU5 v1.4.5** is confirmed. The initial supported-game-version setting is **1.4.5**, and can be changed for each installation. This manual setting does not automatically detect the game version or confirm compatibility with later versions. The editor validates the actual data and uses fingerprints to detect changes.
 
-This manual covers application **1.0.1**. Europa Universalis V and its content belong to their respective owners. This is an unofficial tool, not affiliated with or endorsed by Paradox Interactive.
+This manual covers application **1.0.2**. Europa Universalis V and its content belong to their respective owners. This is an unofficial tool, not affiliated with or endorsed by Paradox Interactive.

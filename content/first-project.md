@@ -11,8 +11,8 @@ The editor checks the selected folder's contents. A folder name alone does not e
 You can also open the gear beside **About**, choose **Game**, and type or paste the installation path. Save its manual version, then choose **Load saved installation**. The editor remembers the installation for the next start by default. See [Settings](settings.html#game-installation-and-version) to change startup behavior.
 
 <figure class="theme-screenshot">
-<img class="screenshot-light" src="assets/welcome-light.png" alt="EU5 Population Editor 1.0.1 welcome screen with the Settings gear beside About." loading="lazy">
-<img class="screenshot-dark" src="assets/welcome-dark.png" alt="EU5 Population Editor 1.0.1 welcome screen with the Settings gear beside About." loading="lazy">
+<img class="screenshot-light" src="assets/welcome-light.png" alt="EU5 Population Editor 1.0.2 welcome screen with the Settings gear beside About." loading="lazy">
+<img class="screenshot-dark" src="assets/welcome-dark.png" alt="EU5 Population Editor 1.0.2 welcome screen with the Settings gear beside About." loading="lazy">
 <figcaption>The welcome screen fits the window without scrolling. <a class="fullsize-light" href="assets/welcome-light.png" target="_blank" rel="noopener">Open full-size screenshot ↗</a><a class="fullsize-dark" href="assets/welcome-dark.png" target="_blank" rel="noopener">Open full-size screenshot ↗</a></figcaption>
 </figure>
 

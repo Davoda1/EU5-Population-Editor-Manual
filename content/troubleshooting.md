@@ -38,7 +38,7 @@ Choose **Review draft** after the most recent input change. Resolve any invalid 
 
 ## Saved changes appear to be missing
 
-Save and export include only confirmed Working values. Pending drafts are excluded. Verify that you applied the proposal and saved the intended project file. There is no autosave in 1.0.1.
+Save and export include only confirmed Working values. Pending drafts are excluded. Verify that you applied the proposal and saved the intended project file. There is no autosave in 1.0.2.
 
 ## Source mismatch after a game update
 

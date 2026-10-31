@@ -1,4 +1,10 @@
-Version 1.0.1 adds a dedicated Settings dialog and improves startup and window behavior. It supports Windows and GNU/Linux x86-64, and keeps the existing project format and population-editing workflow.
+Version 1.0.2 updates the desktop runtime and build toolchain. It supports Windows and GNU/Linux x86-64 and retains project format 1 and the existing population-editing workflow.
+
+## New in 1.0.2
+
+- Update the desktop runtime to Electron 45.2.1 stable.
+- Build with Node.js 26.13.0 LTS and its bundled npm.
+- Refresh the application screenshots throughout this manual.
 
 ## New in 1.0.1
 
@@ -14,7 +20,7 @@ Version 1.0.1 adds a dedicated Settings dialog and improves startup and window b
 
 ## Features retained from 1.0.0
 
-The first public release introduced the editing, migration and export capabilities below. They remain available in 1.0.1.
+The first public release introduced the editing, migration and export capabilities below. They remain available in 1.0.2.
 
 ## Editing and review
 
