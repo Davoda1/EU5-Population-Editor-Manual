@@ -34,6 +34,8 @@ The output contains the changed population source files with unchanged location 
 
 Change reports can also be exported individually as CSV, JSON or Markdown from the dialog.
 
+Human-readable population reports use person counts. JSON reports retain their raw source-unit values and include explicitly named person-count fields, so existing integrations can distinguish the two representations. The exported EU5 population files continue to use the game's thousand-person source units. Displaying people does not change the file format or round untouched source data.
+
 ## Use the exported mod
 
 Follow the mod-loading process supported by your installed game and launcher. EU5 v1.4.5 compatibility is confirmed. Keep a backup of your project; later game versions, changes to launcher conventions and interactions with other enabled mods require their own verification.

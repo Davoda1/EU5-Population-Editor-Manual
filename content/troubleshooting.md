@@ -22,7 +22,7 @@ Saving a different installation in Settings does not replace the currently loade
 
 Use **Settings → Window → Reset window layout**, then **Save settings**, to restore the default centered layout. Turn off **Remember window size and position** if each launch should use that default. Restored windows are fitted to an available display when the monitor arrangement changes.
 
-Use **Settings → Appearance** for **System**, **Light** or **Dark**. A theme preview is kept only after **Save settings**; **Cancel** restores the saved theme. The manual's own theme button does not change the application.
+Use **Settings → Appearance** for **System**, **Light** or **Dark**. A theme preview is kept only after **Save settings**; **Cancel** restores the saved theme. The in-app manual follows these changes. The hosted manual's theme button is independent of the application.
 
 ## Country names or the map are missing
 
@@ -38,7 +38,15 @@ Choose **Review draft** after the most recent input change. Resolve any invalid 
 
 ## Saved changes appear to be missing
 
-Save and export include only confirmed Working values. Pending drafts are excluded. Verify that you applied the proposal and saved the intended project file. There is no autosave in 1.0.2.
+Save and export include only confirmed Working values. Pending drafts are excluded. Verify that you applied the proposal and saved the intended project file. There is no autosave in 1.0.3.
+
+## A legacy population total is not a whole number
+
+Existing source data can represent a fraction of a person. The editor displays and preserves it. A rebalance cannot preserve a fractional total using only whole-person allocations; advanced preservation also checks each complementary bucket. Choose **Scale Population → Set exact value / target** to explicitly set a whole-person total, review and apply the result, then retry. See [Population units](editing.html#population-units).
+
+## The online manual describes a different version
+
+Use **Manual** in the installed application to read its bundled edition. The online site can describe a newer release. Offline chapters, search and images are included with the application and do not need Python or a local server. If bundled files are missing or fail their version check, extract the complete application archive into a clean directory instead of mixing resources from different releases.
 
 ## Source mismatch after a game update
 

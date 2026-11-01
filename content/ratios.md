@@ -19,14 +19,18 @@ Repeated identifiers, malformed lines and unknown definitions are rejected. The 
 
 The default mode preserves each existing group's internal demographic structure where possible. A newly introduced group uses the location's profile. For example, changing culture shares does not require you to manually recreate every religion and population-type combination.
 
+If a retained group's rows are all zero, those rows no longer encode their earlier proportions. Restoring a positive share divides people evenly across the retained rows, using deterministic one-person remainder allocation; their demographic identities and additional fields are preserved. This does not restore historical ratios that were lost when the sizes became zero.
+
 ## Advanced preservation
 
 Expand **Advanced preservation** to preserve each complementary demographic bucket independently. If culture is the edited axis, the complementary buckets are combinations of religion and population type.
 
-This option redistributes the chosen axis inside each bucket. Rounding at the available precision can produce small differences from the requested overall percentages while the total remains exact. Compare the resulting rows before applying.
+This option redistributes the chosen axis inside each bucket. Allocation in whole-person steps can produce small differences from the requested overall percentages while each preserved total remains exact. Compare the resulting rows before applying.
+
+Legacy data with a fractional-person location total cannot be rebalanced into whole people while preserving that same total. Advanced preservation also requires whole-person totals for every preserved bucket. The editor reports these cases. Choose an explicit whole-person target with **Scale Population → Set exact value / target**, review the resulting distribution, and then retry the rebalance. It does not silently round the old totals.
 
 ## Change the total separately
 
 Choose **Scale Population** for an exact target, absolute change, percentage change or multiplier. For example, a multiplier of `1.1` requests a ten-percent increase in total population. Review the proposed total and distribution, then apply it.
 
-The application uses exact arithmetic and deterministic allocation. It does not reinterpret the source's size units as individual people.
+The application uses exact arithmetic and deterministic allocation, with population shown in people. For example, a `10000` target means 10,000 people and is stored as source size `10` in the game file. Existing project and game-file values retain their exact source-unit representation. See [Population units](editing.html#population-units) for the treatment of legacy fractions.

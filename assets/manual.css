@@ -26,3 +26,12 @@ main{min-width:0;padding:34px 0 30px;max-width:780px;width:100%;margin:auto;alig
 .workflow-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:24px 0 30px}.workflow-cards>div{padding:16px;background:var(--surface);border:1px solid var(--line);border-radius:5px}.workflow-cards strong{display:block;font-size:16px;margin-bottom:5px}.workflow-cards span{display:block;font-size:12px;color:var(--muted)}.brand span{white-space:nowrap}.article-footer{flex-wrap:wrap}@media(max-width:600px){.brand{font-size:13px}.brand img{width:24px;height:24px}.header-inner{gap:8px;padding:0 12px}.site-label,.header-divider{display:none}.workflow-cards{grid-template-columns:1fr}.header-links{margin-left:auto}}@media(max-width:370px){.brand span{max-width:140px;white-space:normal;line-height:1.2}.header-links{display:none}}
 
 .theme-screenshot .fullsize-dark{display:none}:root[data-theme="dark"] .theme-screenshot .fullsize-light{display:none}:root[data-theme="dark"] .theme-screenshot .fullsize-dark{display:inline}.theme-screenshot figcaption a{white-space:nowrap}
+
+/* Only Appearance illustrates the selected preference as well as its colors.
+   Keep the matching full-size link and print image in the same variant. */
+:root[data-preference="system"] .appearance-screenshot .fixed-theme,
+:root:not([data-preference="system"]) .appearance-screenshot .system-theme { display: none !important; }
+@media print {
+  .appearance-screenshot .fullsize-light { display: inline !important; }
+  .appearance-screenshot .fullsize-dark { display: none !important; }
+}

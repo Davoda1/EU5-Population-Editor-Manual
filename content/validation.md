@@ -14,6 +14,8 @@ Open **Export Mod** and choose **CSV report**, **JSON report** or **Markdown rep
 
 CSV is convenient for tables; JSON retains structured data; Markdown is useful for a readable change record. Save reports outside the game installation.
 
+CSV and Markdown population values are labelled as people. JSON retains the raw source-unit values and provides separate person-count fields. A game-file source value of `1` represents `1,000` people; do not treat the two report fields as interchangeable. Existing fractional precision remains visible where present.
+
 ## Migration reports
 
 Within a migration plan, export JSON or Markdown before committing. The report records the old baseline, modified and new rows, totals, scaling ratio, proposal and explicit resolutions.

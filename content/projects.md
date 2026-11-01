@@ -23,11 +23,11 @@ The editor uses a themed confirmation dialog when replacing unsaved work, exitin
 <figure class="theme-screenshot">
 <img class="screenshot-light" src="assets/confirmation-light.png" alt="Themed unsaved-work dialog with Cancel, Discard and continue, and Save Working and continue buttons." loading="lazy">
 <img class="screenshot-dark" src="assets/confirmation-dark.png" alt="Themed unsaved-work dialog with Cancel, Discard and continue, and Save Working and continue buttons." loading="lazy">
-<figcaption>The unsaved-work dialog makes the distinction between confirmed Working changes and pending Draft edits explicit. <a class="fullsize-light" href="assets/confirmation-light.png" target="_blank" rel="noopener">Open full-size screenshot ↗</a><a class="fullsize-dark" href="assets/confirmation-dark.png" target="_blank" rel="noopener">Open full-size screenshot ↗</a></figcaption>
+<figcaption>The 1.0.3 unsaved-work dialog, shown with synthetic demonstration data, distinguishes confirmed Working changes from pending Draft edits. <a class="fullsize-light" href="assets/confirmation-light.png" target="_blank" rel="noopener">Open full-size screenshot ↗</a><a class="fullsize-dark" href="assets/confirmation-dark.png" target="_blank" rel="noopener">Open full-size screenshot ↗</a></figcaption>
 </figure>
 
 ## File compatibility
 
-The public application's version number and the project format version are separate. Version 1.0.2 uses native project format 1. A project remains subject to schema, checksum and game-source checks regardless of the application version recorded in it.
+The public application's version number and the project format version are separate. Version 1.0.3 uses native project format 1. A project remains subject to schema, checksum and game-source checks regardless of the application version recorded in it. Project sizes remain in EU5 source units; the person-count interface does not reinterpret existing saved values or discard fractional precision.
 
 See [Import existing population edits](import.html) for supported older JSON projects and mod population files. See [Migrate after a game update](migration.html) when the game data has changed.

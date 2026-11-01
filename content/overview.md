@@ -4,10 +4,12 @@ EU5 Population Editor is an offline desktop tool for inspecting and editing Euro
 
 
 <figure class="theme-screenshot">
-<img class="screenshot-light" src="assets/workspace-light.png" alt="EU5 Population Editor 1.0.2 showing England and the population groups for London." loading="lazy">
-<img class="screenshot-dark" src="assets/workspace-dark.png" alt="EU5 Population Editor 1.0.2 showing England and the population groups for London." loading="lazy">
-<figcaption>The 1.0.2 editor interface with London selected from England. The image follows the manual theme. <a class="fullsize-light" href="assets/workspace-light.png" target="_blank" rel="noopener">Open full-size screenshot ↗</a><a class="fullsize-dark" href="assets/workspace-dark.png" target="_blank" rel="noopener">Open full-size screenshot ↗</a></figcaption>
+<img class="screenshot-light" src="assets/workspace-light.png" alt="EU5 Population Editor 1.0.3 showing population groups for the fictional location Alpha, with counts in people." loading="lazy">
+<img class="screenshot-dark" src="assets/workspace-dark.png" alt="EU5 Population Editor 1.0.3 showing population groups for the fictional location Alpha, with counts in people." loading="lazy">
+<figcaption>The 1.0.3 editor shows Alpha's population of 123,450 people using synthetic demonstration data. The image follows the manual theme. <a class="fullsize-light" href="assets/workspace-light.png" target="_blank" rel="noopener">Open full-size screenshot ↗</a><a class="fullsize-dark" href="assets/workspace-dark.png" target="_blank" rel="noopener">Open full-size screenshot ↗</a></figcaption>
 </figure>
+
+Screenshots in this edition show the actual application with synthetic demonstration data: fictional countries and locations, and an illustrative map. They do not contain shipped EU5 game assets. Your installed game supplies the data and geography when you use the editor.
 
 ## Start here
 
@@ -27,10 +29,14 @@ The editor changes population setup data through exported mods. It is not a save
 | Working | Your confirmed edits | Yes |
 | Draft | A pending proposal | No; choose Apply first |
 
-The values displayed are the game's source size units. They are not automatically presented as a count of individual people.
+Population counts are displayed as **people**. For example, a game-file size of `1.25` is shown as `1,250` people. New absolute counts are entered as whole people; percentages, multipliers and ratio weights may use decimals. Existing fractional-person data is preserved and shown accurately rather than silently rounded. See [Draft and Apply](editing.html#population-units) for conversion and precision details.
+
+## Offline manual
+
+Choose **About → Manual** in the application to open the bundled manual in its own window. Chapters, screenshots, search and themes work without internet access. The bundled version matches the application that supplied it; an older installation therefore keeps its own instructions. **Online manual** in About and **Latest online manual** in the bundled manual's footer open the separately hosted site, which may describe a newer version.
 
 ## Compatibility
 
 Compatibility with **EU5 v1.4.5** is confirmed. The initial supported-game-version setting is **1.4.5**, and can be changed for each installation. This manual setting does not automatically detect the game version or confirm compatibility with later versions. The editor validates the actual data and uses fingerprints to detect changes.
 
-This manual covers application **1.0.2**. Europa Universalis V and its content belong to their respective owners. This is an unofficial tool, not affiliated with or endorsed by Paradox Interactive.
+This manual covers application **1.0.3**. Europa Universalis V and its content belong to their respective owners. This is an unofficial tool, not affiliated with or endorsed by Paradox Interactive.

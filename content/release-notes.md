@@ -1,4 +1,17 @@
-Version 1.0.2 updates the desktop runtime and build toolchain. It supports Windows and GNU/Linux x86-64 and retains project format 1 and the existing population-editing workflow.
+Version 1.0.3 adds a bundled offline manual and shows population as people. It supports Windows and GNU/Linux x86-64 and retains project format 1 and the existing Draft, Apply, migration and export workflow.
+
+## New in 1.0.3
+
+- Open the application-matched manual in a separate local window, with offline chapters, screenshots, search and themes.
+- Use the application's Appearance setting for the in-app manual, including previews and cancellation. The hosted manual retains its independent theme selector.
+- Keep the hosted manual available as an explicit online option.
+- Display and enter absolute population counts in people; percentage inputs, multipliers and ratio weights retain decimal support.
+- Allocate new edits in one-person steps while preserving existing project/source values and their fractional precision when untouched.
+- Report fractional legacy totals that cannot be rebalanced into whole people without an explicit total change.
+- During standard rebalancing, use the positive location profile for a newly introduced demographic group, and restore retained zero-sized rows evenly without losing their additional fields.
+- Require pending editing forms to be resolved before migration, including forms that have not yet been reviewed.
+- Show people in human-readable reports while retaining source-unit values alongside labelled people fields in JSON reports.
+- Include editable manual source, frozen generated pages and SHA-256 verification in the application source distribution.
 
 ## New in 1.0.2
 
@@ -20,7 +33,7 @@ Version 1.0.2 updates the desktop runtime and build toolchain. It supports Windo
 
 ## Features retained from 1.0.0
 
-The first public release introduced the editing, migration and export capabilities below. They remain available in 1.0.2.
+The first public release introduced the editing, migration and export capabilities below. They remain available in 1.0.3.
 
 ## Editing and review
 

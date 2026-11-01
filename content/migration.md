@@ -4,6 +4,8 @@ When a game update changes the population source data, use Upgrade Project / Mod
 
 Save a backup of the project and resolve any pending drafts. Open the project, choose **Upgrade Project / Mod**, and select the new vanilla game installation. Planning compares the recorded old baseline with your modifications and the new source; it does not change Working until you commit.
 
+Pending work includes a typed editing form that has not yet been reviewed, as well as a reviewed Draft. Apply or discard it before starting migration. A form from the old data is not carried into the new source generation.
+
 A saved project can be opened for migration when its source fingerprint differs from the installed game, because it contains the old baseline. Normal editing and export remain blocked until the source difference is resolved. A remembered selection is cleared if the location is no longer editable.
 
 ## Understand the three versions
@@ -34,7 +36,7 @@ The available resolutions include keeping new vanilla, applying the old modifica
 
 For a restricted location, **Keep new vanilla** is the only resolution. Old or scaled population edits cannot be applied to water, corridors or impassable land. The migration report retains the old edits for review; they are not silently discarded while planning.
 
-Directly applying old ratios onto new vanilla and opening a conflict in a temporary normal editing workspace are not available in 1.0.2. You can keep new vanilla, commit the reviewed plan and then edit the location normally if it remains ordinary land eligible for population editing.
+Directly applying old ratios onto new vanilla and opening a conflict in a temporary normal editing workspace are not available in 1.0.3. You can keep new vanilla, commit the reviewed plan and then edit the location normally if it remains ordinary land eligible for population editing.
 
 ## Review world changes
 

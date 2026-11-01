@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Build the EU5 Population Editor manual as portable, dependency-free HTML pages."""
 from pathlib import Path
+import argparse
 import html
 import json
 import re
@@ -12,9 +13,9 @@ ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / 'dist'
 APP = 'https://github.com/Davoda1/EU5-Population-Editor'
 REPO = 'https://github.com/Davoda1/EU5-Population-Editor-Manual'
-VERSION = '1.0.2'
-ASSET_VERSION = '1.0.2'
-PAGES = [('Getting started', 'overview', 'Introduction', 'EU5 Population Editor manual'), ('Getting started', 'installation', 'Installation', 'Install the editor'), ('Getting started', 'first-project', 'Your first project', 'Create your first project'), ('Editing population', 'navigation', 'Browse the world', 'Countries, locations and maps'), ('Editing population', 'editing', 'Draft and Apply', 'Edit population values'), ('Editing population', 'ratios', 'Ratios and totals', 'Rebalance demographics'), ('Editing population', 'projects', 'Save and reopen', 'Save and reopen projects'), ('Editing population', 'export', 'Export a mod', 'Export a population mod'), ('Updating game data', 'migration', 'Upgrade a project', 'Migrate after a game update'), ('Updating game data', 'import', 'Import an existing mod', 'Import existing population edits'), ('Reference', 'validation', 'Validation and reports', 'Check your changes'), ('Reference', 'settings', 'Settings and shortcuts', 'Settings and keyboard shortcuts'), ('Reference', 'troubleshooting', 'Troubleshooting', 'Troubleshooting'), ('Reference', 'privacy', 'Privacy and licensing', 'Privacy, data and licensing'), ('Reference', 'release-notes', 'Release notes', 'Version 1.0.2')]
+VERSION = '1.0.3'
+ASSET_VERSION = VERSION
+PAGES = [('Getting started', 'overview', 'Introduction', 'EU5 Population Editor manual'), ('Getting started', 'installation', 'Installation', 'Install the editor'), ('Getting started', 'first-project', 'Your first project', 'Create your first project'), ('Editing population', 'navigation', 'Browse the world', 'Countries, locations and maps'), ('Editing population', 'editing', 'Draft and Apply', 'Edit population values'), ('Editing population', 'ratios', 'Ratios and totals', 'Rebalance demographics'), ('Editing population', 'projects', 'Save and reopen', 'Save and reopen projects'), ('Editing population', 'export', 'Export a mod', 'Export a population mod'), ('Updating game data', 'migration', 'Upgrade a project', 'Migrate after a game update'), ('Updating game data', 'import', 'Import an existing mod', 'Import existing population edits'), ('Reference', 'validation', 'Validation and reports', 'Check your changes'), ('Reference', 'settings', 'Settings and shortcuts', 'Settings and keyboard shortcuts'), ('Reference', 'troubleshooting', 'Troubleshooting', 'Troubleshooting'), ('Reference', 'privacy', 'Privacy and licensing', 'Privacy, data and licensing'), ('Reference', 'release-notes', 'Release notes', f'Version {VERSION}')]
 def filename(slug):
     return 'index.html' if slug == 'overview' else slug + '.html'
 
@@ -49,7 +50,7 @@ def size_screenshots(article):
     return re.sub(r'href="(assets/[^"<>]+\.png)"',
                   lambda match: f'href="{match.group(1)}?v={ASSET_VERSION}"', article)
 
-def build():
+def build(offline=False):
     if OUT.exists(): shutil.rmtree(OUT)
     OUT.mkdir()
     shutil.copytree(ROOT/'assets',OUT/'assets',dirs_exist_ok=True)
@@ -77,20 +78,26 @@ def build():
                 _,s,l,_=PAGES[neighbor]
                 pager.append(f'<a class="{caption.lower()}" href="{filename(s)}"><span>{caption}</span><strong>{html.escape(l)} {"→" if offset==1 else ""}</strong></a>')
             else:pager.append('<span></span>')
+        edition='Bundled offline manual' if offline else 'Manual'
+        theme_control='' if offline else f'<button class="icon-button theme-toggle" aria-label="Change color theme" title="Change color theme">{THEME_ICON}</button>'
+        source_link=(f'<a href="https://davoda1.github.io/EU5-Population-Editor-Manual/">Latest online manual <span aria-hidden="true">↗</span></a>'
+                     if offline else f'<a href="{REPO}/blob/master/content/{slug}.md">View page source <span aria-hidden="true">↗</span></a>')
         page=f'''<!doctype html>
-<html lang="en">
+<html lang="en" data-edition="{'offline' if offline else 'website'}">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{html.escape(title)} · EU5 Population Editor</title>
 <meta name="description" content="{html.escape(desc,quote=True)}">
 <meta name="color-scheme" content="light dark">
+<meta name="eu5-manual-version" content="{VERSION}">
 <meta name="referrer" content="strict-origin-when-cross-origin">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/manual.css?v={ASSET_VERSION}">
 <script src="assets/theme.js?v={ASSET_VERSION}"></script>
 <script src="assets/search-index.js?v={ASSET_VERSION}" defer></script><script src="assets/manual.js?v={ASSET_VERSION}" defer></script>
 </head>
-<body data-page="{slug}">
+<body data-page="{slug}" data-version="{VERSION}" data-edition="{'offline' if offline else 'website'}">
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
  <div class="header-inner">
@@ -98,21 +105,21 @@ def build():
   <span class="header-divider" aria-hidden="true"></span><span class="site-label">Manual</span>
   <nav class="header-links" aria-label="Project"><a href="{APP}/releases" aria-label="Download EU5 Population Editor {VERSION}">Downloads <span aria-hidden="true">↗</span></a><a href="{APP}">GitHub <span aria-hidden="true">↗</span></a></nav>
   <button class="icon-button mobile-search search-trigger" aria-label="Search manual">{SEARCH_ICON}</button>
-  <button class="icon-button theme-toggle" aria-label="Change color theme" title="Change color theme">{THEME_ICON}</button>
+{theme_control}
  </div>
 </header>
 <div class="manual-layout">
  <aside class="sidebar" aria-label="Manual navigation">
   <button class="search-trigger search-button">{SEARCH_ICON}<span>Search manual</span><kbd>/</kbd></button>
   <nav aria-label="Chapters">{nav(slug)}</nav>
-  <div class="sidebar-meta"><span class="version-label">Version {VERSION}</span><span>Windows &amp; Linux</span></div>
+  <div class="sidebar-meta"><span class="version-label">Version {VERSION}</span><span>{edition}</span><span>Windows &amp; Linux</span></div>
  </aside>
  <div class="mobile-navigation"><details><summary>Browse manual <span>{html.escape(label)}</span></summary><nav aria-label="Mobile chapters">{nav(slug)}</nav></details></div>
  <main id="main" tabindex="-1">
   <div class="breadcrumb"><a href="index.html">Manual</a><span aria-hidden="true">/</span><span>{category}</span></div>
   <article><header class="article-header"><p class="edition">EU5 Population Editor {VERSION}</p><h1>{title}</h1></header>{article}</article>
   <nav class="page-navigation" aria-label="Adjacent chapters">{''.join(pager)}</nav>
-  <footer class="article-footer"><span>EU5 Population Editor documentation · © 2026 davoda1</span><a href="{REPO}/blob/master/content/{slug}.md">View page source <span aria-hidden="true">↗</span></a><a href="LICENSE.txt">AGPLv3</a></footer>
+   <footer class="article-footer"><span>EU5 Population Editor documentation · © 2026 davoda1</span>{source_link}<a href="LICENSE.txt">AGPLv3</a></footer>
  </main>
  <aside class="page-outline" aria-label="On this page"><div><p>On this page</p><ul>{toc}</ul><a class="help-link" href="troubleshooting.html">Need help?</a><a class="outline-source" href="{APP}/issues">Report an issue ↗</a></div></aside>
 </div>
@@ -124,11 +131,15 @@ def build():
 </dialog>
 <div id="toast" role="status" aria-live="polite"></div>
 </body></html>'''
-        (OUT/filename(slug)).write_text(page,encoding='utf-8')
-    (OUT/'assets/search-index.js').write_text('window.MANUAL_SEARCH = '+json.dumps(index,ensure_ascii=False)+';\n',encoding='utf-8')
-    (OUT/'.nojekyll').write_text('')
+        (OUT/filename(slug)).write_text(page,encoding='utf-8',newline='\n')
+    (OUT/'assets/search-index.js').write_text('window.MANUAL_SEARCH = '+json.dumps(index,ensure_ascii=False)+';\n',encoding='utf-8',newline='\n')
+    (OUT/'manual.json').write_text(json.dumps({'version':VERSION,'edition':'offline' if offline else 'website','pages':[filename(slug) for _,slug,_,_ in PAGES]},indent=2)+'\n',encoding='utf-8',newline='\n')
+    if not offline:(OUT/'.nojekyll').write_text('')
     # A useful error page also works on hosts that serve custom 404 documents.
-    (OUT/'404.html').write_text('''<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Page not found · EU5 Population Editor</title><style>body{font:18px/1.6 system-ui;max-width:38rem;margin:12vh auto;padding:24px;color:#252a31}a{color:#175dae}</style><h1>Page not found</h1><p>This address does not match a manual page.</p><p><a href="index.html">Open the EU5 Population Editor manual</a></p></html>''',encoding='utf-8')
-    print(f'Built {len(PAGES)} manual pages in {OUT}')
+    (OUT/'404.html').write_text('''<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Page not found · EU5 Population Editor</title><style>body{font:18px/1.6 system-ui;max-width:38rem;margin:12vh auto;padding:24px;color:#252a31}a{color:#175dae}</style><h1>Page not found</h1><p>This address does not match a manual page.</p><p><a href="index.html">Open the EU5 Population Editor manual</a></p></html>''',encoding='utf-8',newline='\n')
+    print(f'Built {len(PAGES)} {"offline" if offline else "website"} manual pages for {VERSION} in {OUT}')
 
-if __name__=='__main__':build()
+if __name__=='__main__':
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--offline',action='store_true',help='Build the versioned application edition without moving page-source links or hosting-only files.')
+    build(offline=parser.parse_args().offline)

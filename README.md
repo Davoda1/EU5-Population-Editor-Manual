@@ -6,7 +6,7 @@ The guide to [EU5 Population Editor](https://github.com/Davoda1/EU5-Population-E
 
 **[Read the manual](https://davoda1.github.io/EU5-Population-Editor-Manual/)** · **[Build the manual](#build-the-manual)** · **[Get the editor](https://github.com/Davoda1/EU5-Population-Editor/releases)** · **[Report a documentation issue](https://github.com/Davoda1/EU5-Population-Editor-Manual/issues)**
 
-This manual covers **application 1.0.2**, with confirmed compatibility with **EU5 v1.4.5**. The initial supported-game-version setting is **1.4.5** and can be changed for each installation. Later game versions require separate compatibility verification.
+This manual covers **application 1.0.3**. Its established **EU5 v1.4.5** compatibility baseline comes from earlier maintainer verification; it does not represent a new in-game compatibility test of 1.0.3. The initial supported-game-version setting remains **1.4.5** and can be changed for each installation. Later game versions require separate compatibility verification.
 
 ## Topics covered
 
@@ -22,7 +22,9 @@ This manual covers **application 1.0.2**, with confirmed compatibility with **EU
 
 Browse the [chapter source files](content/) or build the website below for the complete reading experience.
 
-The built website adds chapter navigation, an on-page contents list, browser search, and light, dark and system themes. Screenshots follow the selected theme and can be opened at full size. All assets are local; search also works when the manual is opened from disk.
+The built website adds chapter navigation, an on-page contents list, browser search, and light, dark and system themes. Screenshots follow the selected theme and can be opened at full size. All assets are local; search also works when the manual is opened from disk. The application bundles its matching edition and opens it in a separate manual window whose theme follows the application's Appearance setting. The hosted website keeps its own theme selector. Bundled contents remain available offline even when the hosted manual moves to a later application version.
+
+The 1.0.3 screenshots show the actual application with synthetic demonstration data, fictional countries and locations, and an illustrative map. They do not contain shipped EU5 game assets.
 
 ## Build the manual
 
@@ -32,9 +34,14 @@ Use Python 3.12 or later:
 python -m pip install -r requirements.txt
 python scripts/build.py
 python scripts/check.py
+python scripts/test_build.py
 ```
 
 Open `dist/index.html` in a browser or serve `dist/` with a static web server. The build works at a domain root or a project subdirectory.
+
+To generate the application's offline edition instead, run `python scripts/build.py --offline`, followed by `python scripts/check.py`. It contains the same chapters, assets and local search; it identifies the bundled edition and omits links to changing page-source files. Python and Markdown are build tools. Reading a generated manual needs neither of them nor an HTTP server.
+
+The application repository contains a frozen copy of the editable manual source and generated offline site. Its bundle script records exact SHA-256 inventories and its normal build verifies them without fetching this repository or rebuilding the manual. See the application build documentation for refreshing that snapshot.
 
 The **Build manual** workflow validates pushes and pull requests targeting `master` and produces a complete website artifact. See [Contributing](CONTRIBUTING.md) for editing and validation guidance, and [Deployment](docs/DEPLOYMENT.md) for hosting instructions.
 

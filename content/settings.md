@@ -4,13 +4,15 @@ Open **Settings** using the gear immediately to the right of **About**. Its thre
 
 Choose **System**, **Light** or **Dark**. System follows your operating system's appearance and is the default. The preview changes immediately; choose **Save settings** to keep it, or **Cancel** to return to the saved appearance.
 
-<figure class="theme-screenshot">
-<img class="screenshot-light" src="assets/settings-appearance-light.png" alt="Appearance settings with System, Light and Dark theme choices." loading="lazy">
-<img class="screenshot-dark" src="assets/settings-appearance-dark.png" alt="Appearance settings with System, Light and Dark theme choices." loading="lazy">
-<figcaption>The Appearance section previews the selected theme before saving. <a class="fullsize-light" href="assets/settings-appearance-light.png" target="_blank" rel="noopener">Open full-size screenshot ↗</a><a class="fullsize-dark" href="assets/settings-appearance-dark.png" target="_blank" rel="noopener">Open full-size screenshot ↗</a></figcaption>
+<figure class="theme-screenshot appearance-screenshot">
+<img class="screenshot-light fixed-theme" src="assets/settings-appearance-light.png" alt="Appearance settings with Light selected." loading="lazy">
+<img class="screenshot-dark fixed-theme" src="assets/settings-appearance-dark.png" alt="Appearance settings with Dark selected." loading="lazy">
+<img class="screenshot-light system-theme" src="assets/settings-appearance-system-light.png" alt="Appearance settings with System selected, following a light operating-system theme." loading="lazy">
+<img class="screenshot-dark system-theme" src="assets/settings-appearance-system-dark.png" alt="Appearance settings with System selected, following a dark operating-system theme." loading="lazy">
+<figcaption>The Appearance section previews the selected theme before saving. <a class="fullsize-light fixed-theme" href="assets/settings-appearance-light.png" target="_blank" rel="noopener">Open full-size screenshot ↗</a><a class="fullsize-dark fixed-theme" href="assets/settings-appearance-dark.png" target="_blank" rel="noopener">Open full-size screenshot ↗</a><a class="fullsize-light system-theme" href="assets/settings-appearance-system-light.png" target="_blank" rel="noopener">Open full-size screenshot ↗</a><a class="fullsize-dark system-theme" href="assets/settings-appearance-system-dark.png" target="_blank" rel="noopener">Open full-size screenshot ↗</a></figcaption>
 </figure>
 
-The manual's theme button is independent of the application setting and cycles through system, light and dark.
+The in-app manual follows **Settings → Appearance**, including live previews and cancellation. It has no separate theme selector. The hosted manual has its own theme button, which cycles through system, light and dark independently of the application.
 
 ## Game installation and version
 
@@ -67,5 +69,9 @@ Your `.eu5popproj` files and exported mods are stored in the locations you expli
 Resolve pending drafts before undoing or redoing confirmed changes. The toolbar shows whether actions are available for the current state.
 
 ## Manual shortcuts
+
+**About → Manual** opens the edition bundled with your installed application. Its search and illustrations run locally, and its appearance follows the application. Close its window to return to the editor; closing the manual does not change the current project. **Online manual** in About and **Latest online manual** in the bundled manual's footer open the hosted site separately.
+
+The manual window menu provides Home (`Alt+Home`), Back (`Alt+Left`), Forward (`Alt+Right`) and zoom controls. Opening a full-size screenshot stays in the manual window; use Back to return to its chapter. Opening Manual again focuses the existing window. Closing the editor also closes its manual window.
 
 Press `/` or `Ctrl+K` to open manual search. Use the arrow keys to move through results, Enter to follow a result and Escape to close the dialog. Search runs locally in your browser, including when the built manual is opened from disk.

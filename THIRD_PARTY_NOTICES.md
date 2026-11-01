@@ -32,4 +32,4 @@ SOFTWARE.
 
 ## Application screenshots
 
-The images in `assets/workspace-*.png`, `assets/map-*.png` and `assets/confirmation-*.png` show the current editor interface using locally loaded Europa Universalis V data. Game-derived geography, identifiers and population data remain the property of their respective owners. The AGPL license for the original code and documentation does not grant rights over third-party game content visible in the screenshots. No game source files are distributed with this manual.
+The application screenshots in `assets/` were captured from the actual 1.0.3 editor using synthetic demonstration data. The countries and locations are fictional, and the map is illustrative. These captures do not contain shipped Europa Universalis V game assets. Users supply their own installed game data during normal use; the software and manual licenses do not grant rights over that third-party content. No game source files are distributed with this manual.

@@ -34,15 +34,15 @@ An ordinary land location is not blocked just because it is unowned or has no cu
 
 
 <figure class="theme-screenshot">
-<img class="screenshot-light" src="assets/map-light.png" alt="Indexed location map around London with the selected location highlighted." loading="lazy">
-<img class="screenshot-dark" src="assets/map-dark.png" alt="Indexed location map around London with the selected location highlighted." loading="lazy">
-<figcaption>The actual indexed map around London, zoomed out using the map controls. <a class="fullsize-light" href="assets/map-light.png" target="_blank" rel="noopener">Open full-size screenshot ↗</a><a class="fullsize-dark" href="assets/map-dark.png" target="_blank" rel="noopener">Open full-size screenshot ↗</a></figcaption>
+<img class="screenshot-light" src="assets/map-light.png" alt="EU5 Population Editor 1.0.3 displaying an indexed illustrative map with a fictional location selected." loading="lazy">
+<img class="screenshot-dark" src="assets/map-dark.png" alt="EU5 Population Editor 1.0.3 displaying an indexed illustrative map with a fictional location selected." loading="lazy">
+<figcaption>The actual editor's map panel using synthetic demonstration data and an illustrative map. The selected fictional location is highlighted. <a class="fullsize-light" href="assets/map-light.png" target="_blank" rel="noopener">Open full-size screenshot ↗</a><a class="fullsize-dark" href="assets/map-dark.png" target="_blank" rel="noopener">Open full-size screenshot ↗</a></figcaption>
 </figure>
 
 <figure class="theme-screenshot">
-<img class="screenshot-light" src="assets/map-france-light.png" alt="Indexed location map around Paris with the selected location highlighted." loading="lazy">
-<img class="screenshot-dark" src="assets/map-france-dark.png" alt="Indexed location map around Paris with the selected location highlighted." loading="lazy">
-<figcaption>A second example around Paris, France. Map geography and location data come from the installed game. <a class="fullsize-light" href="assets/map-france-light.png" target="_blank" rel="noopener">Open full-size screenshot ↗</a><a class="fullsize-dark" href="assets/map-france-dark.png" target="_blank" rel="noopener">Open full-size screenshot ↗</a></figcaption>
+<img class="screenshot-light" src="assets/map-secondary-light.png" alt="A second fictional location selected on the editor's illustrative demonstration map." loading="lazy">
+<img class="screenshot-dark" src="assets/map-secondary-dark.png" alt="A second fictional location selected on the editor's illustrative demonstration map." loading="lazy">
+<figcaption>A second selection in the same synthetic demonstration world. These screenshots illustrate navigation and highlighting; your installed game provides the real geography during normal use. <a class="fullsize-light" href="assets/map-secondary-light.png" target="_blank" rel="noopener">Open full-size screenshot ↗</a><a class="fullsize-dark" href="assets/map-secondary-dark.png" target="_blank" rel="noopener">Open full-size screenshot ↗</a></figcaption>
 </figure>
 
 ## Map limitations
